@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palet Warna Cinematic Retro */
+  --color-retro-dark: #171513;   /* Background super gelap */
+  --color-retro-brown: #3A2A20;  /* Cokelat tanah/vintage */
+  --color-retro-gold: #D4AF37;   /* Aksen emas klasik */
+  --color-retro-cream: #F4E8D3;  /* Warna teks krem kertas usang */
+
+  /* Tipografi */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-handwriting: "Caveat", cursive;
+}
+
+/* Efek tekstur grain (kamera film) */
+.bg-grain {
+  position: relative;
+}
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.05; /* Sedikit ditebalkan agar lebih terasa */
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Kaca retro */
+.glass-retro {
+  background: rgba(58, 42, 32, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Kertas usang untuk polaroid */
+.paper-texture {
+  background-color: #F4E8D3;
+  background-image: url("https://www.transparenttextures.com/patterns/old-wall.png");
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Scrollbar elegan */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-retro-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-retro-brown);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-retro-gold);
+}

@@ -1,0 +1,21 @@
+{
+  "JAWA TENGAH": [
+    {
+      "nama": "Wayang Kulit",
+      "deskripsi": "Seni pertunjukan tradisional yang menggunakan bayangan boneka kulit.",
+      "gambar": "wayang.jpg"
+    },
+    {
+      "nama": "Batik Pekalongan",
+      "deskripsi": "Kriya tekstil dengan motif pesisir yang kaya warna.",
+      "gambar": "batik.jpg"
+    }
+  ],
+  "BALI": [
+    {
+      "nama": "Tari Kecak",
+      "deskripsi": "Tarian pertunjukan hiburan masal yang diiringi paduan suara pria.",
+      "gambar": "kecak.jpg"
+    }
+  ]
+}

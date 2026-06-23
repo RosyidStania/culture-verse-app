@@ -1,0 +1,17 @@
+[
+  {
+    "id": "aceh",
+    "name": "Nanggroe Aceh Darussalam",
+    "d": "M 85 100 L 95 110 ... (ribuan koordinat asli dari SVG) ..."
+  },
+  {
+    "id": "sumut",
+    "name": "Sumatera Utara",
+    "d": "M 95 110 L 105 130 ... (ribuan koordinat asli dari SVG) ..."
+  },
+  {
+    "id": "jateng",
+    "name": "Jawa Tengah",
+    "d": "M 320 410 L 340 420 ... (ribuan koordinat asli dari SVG) ..."
+  }
+]
