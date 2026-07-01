@@ -95,12 +95,14 @@ export default function InteractiveMap() {
           LAYER 0: PETA INTERAKTIF
           ========================================= */}
       <motion.div
+        initial={{ scale: 1.1, y: 30, opacity: 0, filter: "blur(10px)" }}
         animate={{
           scale: selectedProvince ? 0.8 : 1,
+          y: 0,
           opacity: selectedProvince ? 0.15 : 1,
           filter: selectedProvince ? "grayscale(100%) blur(4px)" : "grayscale(0%) blur(0px)"
         }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
+        transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         className="absolute inset-0 w-full h-full flex items-center justify-center z-0"
       >
         <ComposableMap

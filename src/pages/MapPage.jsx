@@ -10,9 +10,8 @@ export default function MapPage() {
   useEffect(() => {
     // Create audio instance if it doesn't exist
     if (!audioRef.current) {
-      // Using a placeholder ambient sound. 
-      // User can replace this with a local file in public folder like '/sounds/gamelan.mp3'
-      audioRef.current = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-crickets-and-insects-in-the-wild-ambience-39.mp3');
+      // Menggunakan musik epik cinematic dari Kevin MacLeod
+      audioRef.current = new Audio('https://incompetech.com/music/royalty-free/mp3-royaltyfree/Epic%20Unease.mp3');
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }
@@ -53,7 +52,12 @@ export default function MapPage() {
       className="relative w-full h-screen bg-retro-dark text-retro-cream overflow-hidden flex flex-col bg-grain"
     >
       {/* Header Overlay */}
-      <div className="absolute top-0 left-0 w-full p-6 z-40 flex justify-between items-center pointer-events-none">
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, delay: 1, ease: "easeOut" }}
+        className="absolute top-0 left-0 w-full p-6 z-40 flex justify-between items-center pointer-events-none"
+      >
         <div className="pointer-events-auto">
           <h2 className="font-heading text-xl md:text-2xl text-retro-gold uppercase tracking-[0.2em] opacity-80">
             Jejak Nusantara
@@ -79,7 +83,7 @@ export default function MapPage() {
             </svg>
           )}
         </button>
-      </div>
+      </motion.div>
 
       {/* Main Map Content */}
       <main className="relative z-10 flex-1 flex items-center justify-center w-full h-full pt-16">
