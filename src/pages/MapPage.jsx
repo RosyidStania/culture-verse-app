@@ -2,47 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import InteractiveMap from '../components/InteractiveMap';
 
-export default function MapPage() {
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const audioRef = useRef(null);
-
-  // Auto-play audio when entering the map page
-  useEffect(() => {
-    // Create audio instance if it doesn't exist
-    if (!audioRef.current) {
-      // Menggunakan musik epik cinematic dari Kevin MacLeod
-      audioRef.current = new Audio('https://incompetech.com/music/royalty-free/mp3-royaltyfree/Epic%20Unease.mp3');
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.3;
-    }
-
-    const playAudio = async () => {
-      try {
-        await audioRef.current.play();
-        setIsAudioPlaying(true);
-      } catch (err) {
-        console.log("Audio autoplay prevented by browser. User needs to interact first.", err);
-      }
-    };
-
-    playAudio();
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
-  }, []);
-
-  const toggleAudio = () => {
-    if (isAudioPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsAudioPlaying(!isAudioPlaying);
-  };
-
+export default function MapPage({ isAudioPlaying, toggleAudio, setSelectedProvince }) {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -87,7 +47,7 @@ export default function MapPage() {
 
       {/* Main Map Content */}
       <main className="relative z-10 flex-1 flex items-center justify-center w-full h-full pt-16">
-        <InteractiveMap />
+        <InteractiveMap onProvinceChange={setSelectedProvince} />
       </main>
       
       {/* Subtle bottom vignette */}

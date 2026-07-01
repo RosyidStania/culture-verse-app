@@ -5,12 +5,19 @@ import { defaultPhotos, provinceData } from '../data/culturalData';
 
 const geoUrl = "/indonesia.json";
 
-export default function InteractiveMap() {
+export default function InteractiveMap({ onProvinceChange }) {
   const [hoveredProvince, setHoveredProvince] = useState(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   
   // State 1: Provinsi yang dipilih dari Peta (Memicu Meja Arsip)
   const [selectedProvince, setSelectedProvince] = useState(null);
+
+  // Notify parent when province changes
+  useEffect(() => {
+    if (onProvinceChange) {
+      onProvinceChange(selectedProvince);
+    }
+  }, [selectedProvince, onProvinceChange]);
   
   // State 2: Foto yang diklik dari Meja Arsip (Memicu Layar Penuh/Immersive)
   const [selectedPhoto, setSelectedPhoto] = useState(null);
