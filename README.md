@@ -16,7 +16,7 @@ You will need the following installed on your machine:
 
 1. **Clone the repository**
    ```bash
-   git clone <YOUR_REPOSITORY_URL>
+   git clone <https://github.com/RosyidStania/culture-verse-app.git>
    cd culture-verse-app
    ```
 
